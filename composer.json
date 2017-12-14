@@ -1,22 +1,12 @@
 {
-    "name": "drcha/forteroche",
-    "description": "Blog de Mr Forteroche",
-    "type": "project",
-    "authors": [
-        {
-            "name": "wothag",
-            "email": "d.r.c.hagnere@gmail.com"
-        }
-    ],
-
-    "autoload":{
-      "psr-4" : {
-        "Framework\\": "src/Framework"
-
-      }
-    },
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^6.5"
+  "name": "wothag/Forteroche",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "",
+  "authors": [
+    {
+      "name": "David Hagnere",
+      "email": "d.r.c.hagnere@gmail.com"
     }
+  ]
 }
