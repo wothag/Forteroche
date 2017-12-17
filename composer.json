@@ -8,5 +8,8 @@
       "name": "David Hagnere",
       "email": "d.r.c.hagnere@gmail.com"
     }
-  ]
+  ],
+  "require": {
+    "00f100/phpuphar": "0.7.0"
+  }
 }

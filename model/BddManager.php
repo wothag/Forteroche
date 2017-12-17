@@ -12,15 +12,19 @@ class BddManager
 	protected $hostname = 'localhost';
 	protected $login = 'root';
 	protected $pwd = '';
-	protected $dbname = 'forteroche';
+	protected $dbname = "forteroche";
 
 	public function __construct()
 	{
 		$db = new PDO('mysql:hostname='. $this->hostname.';dbname='.$this->dbname.';charset=utf8',
-			$this->login, $this->pwd);
+			'root', '');
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$this->db = $db;
+		$this->db=$db;
 	}
+
+
+
+	
 }
 
 
