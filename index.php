@@ -7,9 +7,12 @@
  */
 function chargerClasse()
 {
-	require 'model/BddManager.php';
+
 	require 'model/Chapter.php';
 	require 'model/ChapterManager.php';
+	require 'model/Manager.php';
 }
+
+
 spl_autoload_register('chargerClasse');
 
