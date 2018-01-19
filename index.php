@@ -7,7 +7,7 @@
  */
 
 
-require ('controller.php');
+require('controller/controller.php');
 
 if (isset($_GET['action']))
 {
@@ -19,7 +19,7 @@ if (isset($_GET['action']))
     {
         if (isset($_GET['id']) && $_GET['id'] > 0)
         {
-            comments();
+            listComments();
         } else
             {
             echo 'Attention : aucun identifiant de billet envoyé, il s\'agit d\'une erreur';

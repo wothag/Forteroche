@@ -17,7 +17,7 @@
                 <br/>
             <em><?= nl2br(htmlspecialchars($data['author']));?></em>
                 <br/>
-            <em><a href="chapter.php?id=<?=$data['id'] ?>">Commentaires</a></em>
+            <em><a href="comments.php?id=<?=$data['id'] ?>">Commentaires</a></em>
             </p>
         </div>
         <?php

@@ -5,20 +5,20 @@
  * Date: 19/01/2018
  * Time: 16:24
  */
-require ('model.php');
+require('model/model.php');
 
 function listChapters()
 {
     $chapters = getChapters();
 
-    require('listView.php');
+    require('view/listView.php');
 }
 
-function comments()
+function listComments()
 {
     $chapter = getChapter($_GET['id']);
     $comments = getComments($_GET['id']);
-    require('commentsView.php');
+    require('view/commentsView.php');
 
 
 }
