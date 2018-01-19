@@ -1,15 +1,6 @@
+<?php $title = 'Blog de Mr Forteroche' ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Mon blog</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <h1>Jean Forteroche!</h1>
-        <p>Derniers Chapitres:</p>
+<?php ob_start(); ?>
 
         <?php
         while ($data = $chapters->fetch())
@@ -33,5 +24,5 @@
         }
         $chapters->closeCursor();
         ?>
-    </body>
-</html>
+<?php $content = ob_get_clean();?>
+<?php require('template.php');?>

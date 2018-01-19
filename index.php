@@ -7,10 +7,28 @@
  */
 
 
-require('model.php');
+require ('controller.php');
 
-$chapters = getChapters();
+if (isset($_GET['action']))
+{
+    if ($_GET['action'] == 'listChapters')
+    {
+        listChapters();
+    }
+    elseif ($_GET['action'] == 'comments')
+    {
+        if (isset($_GET['id']) && $_GET['id'] > 0)
+        {
+            comments();
+        } else
+            {
+            echo 'Attention : aucun identifiant de billet envoyé, il s\'agit d\'une erreur';
+            }
+    }
+}
+ else {
+ listChapters();
+}
 
-require('indexView.php');
 
 

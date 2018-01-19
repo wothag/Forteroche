@@ -32,14 +32,11 @@ function getChapter($ChapterId)
     return $chapter;
 }
 
-function getComments($chapterId)
+function getComments($ChapterId)
 {
     $db = dbConnect();
-
-
-    //on recupère les commentaires associés au chapter par son id
-    $comments = $db->prepare('SELECT id, author, comments, DATE_FORMAT(date_comments, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comments_fr FROM comments WHERE chapter_id = ? ORDER BY date_comments_fr DESC');
-    $comments->execute(array($chapterId));
+    $comments = $db->prepare('SELECT id, author, comments, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comments_fr FROM comments WHERE chapter_id = ? ORDER BY date_comment DESC');
+    $comments->execute(array($ChapterId));
 
     return $comments;
 }

@@ -2,17 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: David
- * Date: 18/01/2018
- * Time: 14:17
+ * Date: 19/01/2018
+ * Time: 16:24
  */
+require ('model.php');
 
-require('model.php');
+function listChapters()
+{
+    $chapters = getChapters();
 
-if (isset($_GET['id']) && $_GET['id'] > 0) {
+    require('listView.php');
+}
+
+function comments()
+{
     $chapter = getChapter($_GET['id']);
     $comments = getComments($_GET['id']);
     require('commentsView.php');
+
+
 }
-else {
-    echo 'Erreur : aucun identifiant de billet envoyé';
-}
+
