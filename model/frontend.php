@@ -44,11 +44,11 @@ function getComments($ChapterId)
     return $comments;
 }
 
-function postComment($postId, $author, $comment)
+function postComment($ChapterId, $author, $comments)
 {
 	$db = dbConnect();
 	$comments = $db->prepare('INSERT INTO comments(chapter_id, author, comments, date_comment) VALUES(?, ?, ?, NOW())');
-	$affectedLines = $comments->execute(array($postId, $author, $comments));
+	$affectedLines = $comments->execute(array($ChapterId, $author, $comments));
 
 	return $affectedLines;
 }

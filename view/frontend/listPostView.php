@@ -2,8 +2,13 @@
 
 <?php ob_start(); ?>
 
-        <?php
-        while ($data = $chapters->fetch())
+<h1>Le dernier livre de Jean Forteroche !</h1>
+<p>Derniers Chapitres:</p>
+
+
+
+<?php
+        while ($data = $posts->fetch())
         {
         ?>
         <div class="news">
@@ -17,12 +22,14 @@
                 <br/>
             <em><?= nl2br(htmlspecialchars($data['author']));?></em>
                 <br/>
-            <em><a href="index.php?action=comments&amp;id=<?=$data['id'] ?>">Commentaires</a></em>
+            <em><a href="index.php?action=post&amp;id=<?=$data['id'] ?>">Commentaires</a></em>
             </p>
         </div>
         <?php
         }
-        $chapters->closeCursor();
+        $posts->closeCursor();
         ?>
+
 <?php $content = ob_get_clean();?>
+
 <?php require('template.php');?>

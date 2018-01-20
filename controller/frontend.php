@@ -5,30 +5,37 @@
  * Date: 19/01/2018
  * Time: 16:24
  */
-require('model/frontend.php');
+require_once ('model/PostManager.php');
+require_once ('model/CommentManager.php');
 
-function listChapters()
+function listPosts()
 {
-    $chapters = getChapters();
+    $postManager = new PostManager();
+    $posts=$postManager->getPosts();
 
-    require('view/frontend/listView.php');
+    require('view/frontend/listPostView.php');
 }
 
-function listComments()
+function post()
 {
-    $chapter = getChapter($_GET['id']);
-    $comments = getComments($_GET['id']);
-    require('view/frontend/commentsView.php');
+	$postManager = new PostManager();
+	$commentManager = new CommentManager();
 
+	$post = $postManager->getPost($_GET['id']);
+	$comments = $commentManager->getComments($_GET['id']);
 
+	require('view/frontend/postView.php');
 }
+
 
 function addComment($postId, $author, $comment)
 {
-	$affectedLines = postComment($postId, $author, $comment);
+
+	$commentManager = new CommentManager();
+	$affectedLines = $commentManager->postComment($postId, $author, $comment);
 
 	if ($affectedLines === false) {
-		die('Impossible d\'ajouter le commentaire !');
+		throw new Exception('Impossible d\'ajouter le commentaire !');
 	} else {
 		header('Location: index.php?action=comments&id=' . $postId);
 	}
