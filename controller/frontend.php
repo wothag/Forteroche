@@ -8,6 +8,12 @@
 require_once ('model/PostManager.php');
 require_once ('model/CommentManager.php');
 
+function homePage()
+{
+	require('view/frontend/homeView.php');
+
+
+}
 function listPosts()
 {
     $postManager = new PostManager();
@@ -15,6 +21,7 @@ function listPosts()
 
     require('view/frontend/listPostView.php');
 }
+
 
 function post()
 {

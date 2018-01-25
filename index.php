@@ -1,11 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: David
- * Date: 17/01/2018
- * Time: 10:24
- */
 
+<?php
 
 require('controller/frontend.php');
 
@@ -34,13 +28,12 @@ try {
 		}
 	}
 	else {
-		listPosts();
+		homePage();
 	}
 }
 catch(Exception $e) {
 	echo 'Erreur : ' . $e->getMessage();
-}
-
+}?>
 
 
 
