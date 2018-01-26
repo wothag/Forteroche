@@ -1,0 +1,155 @@
+html, body , header {
+background-color: whitesmoke;
+margin:0;
+pading:0;
+font-family: Pacifico, sans-serif;
+}
+
+.conteneur {
+	width: 1800px;
+	margin: auto ;
+	max-height: 100px;
+}
+
+header {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	flex-wrap: wrap;
+}
+ .logo {
+
+ 	margin: 20px 50px;
+
+ }
+
+.billet
+{
+font-family: 'Dancing Script', cursive;
+text-align: center;
+margin: auto;
+color: #12273f;
+font-size: 3em;
+
+}
+
+
+h1 {
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	color: pink;
+	text-align:center;
+	font-size: 3em;
+}
+
+
+
+li{
+	display: inline-flex;
+	flex-direction: column;
+
+
+}
+
+a{
+	color: #12273f;
+	text-decoration: none;
+	display: inline-block;
+	padding: 20px 20px;
+
+}
+
+.centretest	{
+
+	max-width: 100%;
+	margin-left: 200px;
+	background-color: pink;
+	text-align:center;
+	margin: 0 0 10 0 ;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.Chapitre {
+	border-width: 2px;
+	border-style: solid;
+	}
+
+ h3 {
+
+	color: black;
+	text-align: justify;
+	font-size: 1em;
+}
+
+.wrapper
+{
+
+    width: 940px;
+    margin:0 auto;
+    padding: 0 50px;
+    color: black;
+    font-family:'Crete Round', serif;
+    text-align: justify;
+
+}
+
+ .Chapter-number
+ {
+     max-width: 1000px;
+     max-height: 500px;
+     border-style:solid ;
+     border-width: 2px;
+     margin-bottom: 5px;
+     padding : 25px;
+ }
+
+ .chapter-title
+ {
+     font-family:'Crete Round', serif;
+     font-size :20px;
+     color:#444;
+     text-align: center;
+     font-weight: bold;
+
+
+ }
+
+ .comments a
+ {
+     color: red;
+
+ }
+
+.button1
+{
+
+    width: 120px;
+    height: 50px;
+    background:#D16421;
+    color: #ffffff;
+    font-size: 20px;
+    margin:0 auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius:3px
+
+}
+
+
+
+.print-comments
+{
+    align-self: center;
+    margin-left: 500px;
+    display: block;
+    width: 1000px;
+    height: 500px;
+    max-width: 1000px;
+    max-height: 500px;
+    border-style:solid ;
+    border-width: 2px;
+    margin-bottom: 5px;
+    padding : 25px;
+}
