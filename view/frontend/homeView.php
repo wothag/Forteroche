@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="index.php">accueil</a></li>
                 <li><a href="index.php?action=listPosts">liste des chapitres</a></li>
-                <li><a href="#connexion">connexion</a></li>
+                <li><a href="index.php?action=connection">connexion</a></li>
             </ul>
 
         </nav>
@@ -26,6 +26,7 @@
 
 
 </header>
+<body>
 
 <section id="main-image">
     <div class="wrapper">
@@ -34,22 +35,12 @@
     </div>
 </section>
 
-<section id="menu-choice"> <div class="wrapper"></div>
-</section>
-<section id="connexion"></section>
-<div class="wrapper"></div>
 
-<footer>
-
-
-
-
-
-</footer>
 
 
 
 
 </body>
 
-</html>
+
+

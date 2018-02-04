@@ -55,7 +55,7 @@ a:hover
 .print-comments
 {
     width: 600px;
-    margin:50px auto 50px 0px;
+    margin:50px auto 50px 0;
     padding: 0 50px;
     text-align: justify;
     font-size:0.7em;
@@ -174,4 +174,23 @@ header nav ul li a:hover
 
 }
 
-/
+.button2
+{
+
+    width: auto;
+    height: 20px;
+    background:Red;
+    color: #ffffff;
+    font-size: 12px;
+    margin:0 auto;
+    line-height: 10px;
+
+    border-radius:3px
+
+}
+
+.Ajoutcomments
+{
+    text-align: center;
+    color: #D16421;
+}
