@@ -8,6 +8,12 @@
 require_once ('model/PostManager.php');
 require_once ('model/CommentManager.php');
 
+function Flag(){
+	require('view/backend/flagcomments.php');
+
+}
+
+
 function homePage()
 {
 	require('view/frontend/homeView.php');

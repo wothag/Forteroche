@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="index.php">accueil</a></li>
                 <li><a href="index.php?action=listPosts">liste des chapitres</a></li>
-                <li><a href="#connexion">connexion</a></li>
+                <li><a href="index.php?action=connection">connexion</a></li>
             </ul>
 
         </nav>
@@ -59,6 +59,13 @@
 			?>
             <div><strong>Pseudo : <?= htmlspecialchars($comment['author']) ?></strong> <br/>Le <?= $comment['date_comment_fr'] ?></div><br/>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br/><br/>
+            <div>
+                <form action="index.php?action=flag&amp;id=<?= $post['id'] ?>" method="post">
+                <input type="submit" name="Flag"  value="Signaler le commentaire" class="button2" /><br/><br/><br/>
+                </form>
+            </div>
+
+
 			<?php
 		}
 		?>
@@ -66,6 +73,8 @@
 </div>
 
         <div>
+            <div class="Ajoutcomments">Vous pouvez ajouter vos commentaires ou signaler un commentaire indésirable.</div>
+
             <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                 <div>
                     <label for="author">Auteur</label><br />
@@ -73,7 +82,7 @@
                 </div>
                 <div>
                     <label for="comment">Commentaire</label><br />
-                    <textarea id="comment" name="comment"></textarea>
+                    <textarea id="comment" name="comment" rows="10" cols="120"></textarea>
                 </div>
                 <div>
                     <input type="submit" class="button1" />
