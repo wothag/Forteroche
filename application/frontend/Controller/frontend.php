@@ -1,26 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * userManager: David
- * Date: 19/01/2018
- * Time: 16:24
- */
-require("application/frontend/model/PostManager.php");
-require("application/frontend/model/CommentManager.php");
-require("application/frontend/model/Manager.php");
+
+require_once ("application/frontend/model/PostManager.php");
+require_once ("application/frontend/model/CommentManager.php");
 
 
 
-function inscription(){
 
 
-}
 
-function flag()
+function flag($id)
 {
 	$CommentManager= new CommentManager();
-	$flagComment = $CommentManager->flagcomments();
-
+	$CommentManager->updateComment($id);
+	require ('application/frontend/view/frontend/CommentViewOk.php');
 }
 
 

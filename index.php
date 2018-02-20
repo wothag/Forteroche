@@ -1,8 +1,8 @@
 
 <?php
 
-require('controller/frontend/frontend.php');
-require('controller/backend/backend.php');
+require('application/frontend/controller/frontend.php');
+
 
 try {
 	if (isset($_GET['action'])) {
@@ -37,16 +37,14 @@ try {
 				throw new Exception ('Erreur : aucun identifiant de billet envoyé');
 				}
 			}
-		elseif ($_GET['action'] == 'connection')
+		elseif ($_GET['action'] == 'inscription')
 		{
-			admin();
+			inscription();
 		}
-		elseif ($_GET['action'] == 'flag')
+		elseif ($_GET['action'] == 'flag' &&($_GET['id']>0))
 		{
-			Flag();
+			flag($_GET['id']);
 		}
-
-
 	}
 	else {
 		homePage();

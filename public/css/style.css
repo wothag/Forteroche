@@ -1,7 +1,7 @@
 html, body , header {
 background-color: whitesmoke;
 margin:0;
-pading:0;
+padding:0;
 font-family: Pacifico, sans-serif;
 }
 
@@ -153,3 +153,5 @@ a{
     margin-bottom: 5px;
     padding : 25px;
 }
+
+

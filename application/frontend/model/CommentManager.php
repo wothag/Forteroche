@@ -1,18 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * userManager: drcha
- * Date: 20/01/2018
- * Time: 12:33
- */
-class CommentManager
+include 'database.php';
+class CommentManager extends Database
 {
-	public function dbConnect()
-	{
-		$db = new PDO('mysql:host=localhost;dbname=forteroche;charset=utf8', 'root', '');
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		return $db;
-	}
+
 
 	public function getComments($postId)
 	{
@@ -31,6 +21,19 @@ class CommentManager
 		return $affectedLines;
 	}
 
+	public function updateComment($commentID)
+	{
+		$db=$this->dbconnect();
+
+		$comments=$db->prepare('UPDATE  comments SET flag = 1 WHERE  id=:id');
+		$affectedLines = $comments->execute(array('id'=>$commentID));
+
+
+		return $affectedLines;
+
+	}
 
 
 }
+
+

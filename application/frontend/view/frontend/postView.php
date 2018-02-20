@@ -60,7 +60,7 @@
             <div><strong>Pseudo : <?= htmlspecialchars($comment['author']) ?></strong> <br/>Le <?= $comment['date_comment_fr'] ?></div><br/>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br/><br/>
             <div>
-                <form action="index.php?action=flag&amp;id=<?= $post['id'] ?>" method="post">
+                <form action="index.php?action=flag&amp;id=<?= $comment['id'] ?>" method="post">
                 <input type="submit" name="Flag"  value="Signaler le commentaire" class="button2" /><br/><br/><br/>
                 </form>
             </div>

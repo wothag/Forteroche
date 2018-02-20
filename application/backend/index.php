@@ -1,8 +1,28 @@
-<?php include("view/includes/header.php"); ?>
+<?php   include("view/includes/header.php");
+        require('controller/backend.php');
+       
 
-        <!-- Navigation -->
+try {
+    if (isset($_GET['action'])){
+        if ($_GET['action']=='modcomments'){
+            modcomments();
+        }
+        if ($_GET['action']=='viewreaders'){
+            viewreaders();
+        }
+    }
+    else 
+    {
+        HomeAdmin();
+    }
+}
+catch(Exception $e){
+    echo 'Erreur :'. $e->getMessage();
+}
+?>
+        <!-- Navigation 
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <!-- Brand and toggle get grouped for better mobile display 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>

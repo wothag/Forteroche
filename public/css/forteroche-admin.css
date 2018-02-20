@@ -1,8 +1,10 @@
+
+
 /* Global Styles */
 
 body {
     margin-top: 100px;
-    background-color: rgb(206, 28, 28);
+    background-color: rgb(255, 254, 254);
 }
 
 @media(min-width:768px) {
@@ -39,7 +41,7 @@ body {
 /* Top Navigation */
 
 .top-nav {
-    padding: 0 15px;
+    padding: 0px 15px;
 }
 
 .top-nav>li {
@@ -109,7 +111,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 50px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -126,7 +128,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #000 !important;
+        background-color: rgb(241, 2, 2) !important;
     }
 }
 
@@ -217,9 +219,23 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
-.tab-user-view
-{
- color: #000;
 
+/* Admin output */
+
+
+.menu.top_nav{  
+  
+    margin: 15px;
+    color: #fff;
+
+
+}
+
+.table-responsive{
+    max-width: 1200px;
+    align-self: auto;
+    margin-top: 50px;
+    margin-left: 25px;
+   
 
 }
