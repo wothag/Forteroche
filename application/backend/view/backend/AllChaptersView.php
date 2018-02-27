@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html>
         <head>		
@@ -26,44 +28,46 @@
                 </ul>
         </div>
         <!--end of side panel-->
-        <div class="col-sm-10">
-        <h1> Administration</h1>
-            <!--start of main panel-->
-            <h4>Modération des commentaires<h4>
-            <div class="col-lg-12 table-responsive">
-      <table class="table table-bordered table-striped">
-			<thead>
-        <tr>
-          <th>Auteur</th><th>COMMENTAIRES</th><th>Chapitre</th><th>Date</th><th>Effacer</th><th>Modérer</th>
-			</thead>
-      </tr>
-        <?php
-           while($data=$flagcomment->fetch())
-              {
-                echo '<tr>          <td>'.$data['author'],
-                                    '<td>'.$data['comment'],
-                                    '<td>'.$data['post_id'],
-                                    '<td>'.$data['date_comment_fr'],
-																		'<td>	<a class ="btn btn-danger" href="index.php?action=deleteComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
-																		'<td>	<a class ="btn btn-warning" href="index.php?action=modifyComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modérer</a>',
-																		'</tr>';            
-             }  ?>
-        </table>
-      </div>  
-    </div>
-      </div>
-           
-            <!--end of main panel-->        
 
+         <!--start of main panel-->
+        <div class="col-sm-10">
+        <h1> Vue de tous les chapitres</h1>
+        <div class="col-lg-12 table-responsive">
+            <table class="table table-bordered table-striped">
+			    <thead>
+                    <tr>
+                        <th>chapitre</th><th>Date</th><th>Contenu</th><th>Auteur</th><th>Effacer</th><th>Modifier</th>
+			    </thead>
+        <?php 
+          while ($data = $allchapters->fetch())
+          {
+            {
+                echo '<tr>          <td>'.$data['title'],
+                                    '<td>'.$data['date_created_fr'],
+                                    '<td>'.$data['content'],
+                                    '<td>'.$data['author'],
+																		'<td>	<a class ="btn btn-danger" href="index.php?action=deleteChapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
+																		'<td>	<a class ="btn btn-warning" href="index.php?action=modifychapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modifier</a>',
+                                                                        '</tr>'; 
+            }
+    ?>      
+           
+           
+        <?php
+        }
+        $allchapters->closeCursor();
+        ?>
+     
+            <!--end of main panel-->        
+    </div>
     </div>
       <!--end of bootstrap row-->   
     </div>
-    <!--end of bootstrap container-->  
-    <div id="Footer">
-        <hr><p>Theme d'Administration du blog de Mr Forteroche | Par Dhagnere.</p>
-        <hr>
-    </div>
-    <div <style="height:10px; background:#27AAE1;"></style></div>
-
-
+    <!--end of bootstrap container-->
+       </div>
     </body>
+    </div>
+
+    </html>
+
+  

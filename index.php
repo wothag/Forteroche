@@ -37,10 +37,7 @@ try {
 				throw new Exception ('Erreur : aucun identifiant de billet envoyé');
 				}
 			}
-		elseif ($_GET['action'] == 'inscription')
-		{
-			inscription();
-		}
+		
 		elseif ($_GET['action'] == 'flag' &&($_GET['id']>0))
 		{
 			flag($_GET['id']);

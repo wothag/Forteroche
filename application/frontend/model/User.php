@@ -9,7 +9,7 @@ class User extends Database {
    public $password;
    public $first_name;
    public $last_name;
-   public $flag;
+   public $ad;
 
     public function find_all_users() {
 
@@ -17,14 +17,8 @@ class User extends Database {
         $result_all_users = $db->query('SELECT * FROM users');
         return $result_all_users;
         }
-
-    public function register_user(){
-
-
-
-
     }
-}
+    
 
 
 
@@ -34,4 +28,3 @@ class User extends Database {
 
 
 
-?>

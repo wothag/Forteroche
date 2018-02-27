@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="index.php">accueil</a></li>
                 <li><a href="index.php?action=listPosts">liste des chapitres</a></li>
-                <li><a href="#connexion">connexion</a></li>
+               
             </ul>
 
         </nav>

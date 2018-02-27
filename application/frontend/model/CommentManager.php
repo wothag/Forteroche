@@ -1,5 +1,6 @@
 <?php
-include 'database.php';
+
+require_once 'Database.php';
 class CommentManager extends Database
 {
 
@@ -33,6 +34,28 @@ class CommentManager extends Database
 
 	}
 
+	public function deletecomments($postid)
+	{
+		$db=$this->dbconnect();        
+        $deletecomment=$db->prepare('DELETE FROM comments WHERE id=:id');
+        $affectedLines=$deletecomment->execute(array('id'=>$postid));
+		
+		return $affectedLines;
+		
+
+	}   
+
+	public function modifycomment($postid)
+	{
+		$db=$this->dbconnect();        
+        $modifycomment=$db->prepare('UPDATE comments SET comment = "Votre Commentaire à été modéré par l\' administrateur", flag = 0  WHERE id=:id');
+        $affectedLines=$modifycomment->execute(array('id'=>$postid));
+		
+		return $affectedLines;
+		
+	
+		
+	}   
 
 }
 
