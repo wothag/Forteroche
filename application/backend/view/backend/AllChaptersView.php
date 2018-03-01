@@ -21,7 +21,7 @@
             <h2>Jean forteroche</h2>
                 <ul id="Side_Menu"class="nav nav-pills nav-stacked">
                     <li class="active"><a href="../../index.php"><span class="glyphicon glyphicon-th"></span>&nbsp;Retour sur le site</a></li>
-                    <li><a href="../../index.php"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Ajouter un chapitre</a></li>
+                    <li><a href="../backend/index.php?action=writeChapter"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Ajouter un chapitre</a></li>
                     <li><a href="../backend/index.php?action=allChapters"><span class="glyphicon glyphicon-trash"></span>&nbsp;Modifier/Effacer un chapitre</a></li>
                     <li><a href="../backend/index.php?action=modcomments"><span class="glyphicon glyphicon-comment"></span>&nbsp;Modérer les commentaires</a></li>   
                     <li><a href="../backend/index.php?action=deconnection"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Se déconnecter</a></li>            
@@ -31,7 +31,7 @@
 
          <!--start of main panel-->
         <div class="col-sm-10">
-        <h1> Vue de tous les chapitres</h1>
+        <h1> Vue de tous les résumés des chapitres</h1>
         <div class="col-lg-12 table-responsive">
             <table class="table table-bordered table-striped">
 			    <thead>
@@ -41,18 +41,16 @@
         <?php 
           while ($data = $allchapters->fetch())
           {
-            {
-                echo '<tr>          <td>'.$data['title'],
-                                    '<td>'.$data['date_created_fr'],
-                                    '<td>'.$data['content'],
-                                    '<td>'.$data['author'],
-																		'<td>	<a class ="btn btn-danger" href="index.php?action=deleteChapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
-																		'<td>	<a class ="btn btn-warning" href="index.php?action=modifychapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modifier</a>',
-                                                                        '</tr>'; 
-            }
-    ?>      
-           
-           
+                {
+                echo    '<tr>   <td>'.$data['title'],
+                                '<td>'.$data['date_created_fr'],
+                                '<td>'.substr($data['content'],0,200),
+                                '<td>'.$data['author'],
+								'<td><a class ="btn btn-danger" href="index.php?action=deleteChapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
+								'<td><a class ="btn btn-warning" href="index.php?action=modifychapter&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modifier</a>',
+                        '</tr>'; 
+                }     
+         ?>              
         <?php
         }
         $allchapters->closeCursor();

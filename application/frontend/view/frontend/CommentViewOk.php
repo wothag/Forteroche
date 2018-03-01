@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: drcha
- * Date: 15/02/2018
- * Time: 17:59
- */
-
-echo 'merci votre commentaire à bien été signalé !';
+echo '<script>alert("le commentaire a été signalé");</script>'; 
+header("location:index.php?action=listPosts");
+exit; 

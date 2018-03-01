@@ -10,7 +10,8 @@
   
 
 try {
-        if (isset($_GET['action'])){
+        if (isset($_GET['action']))
+        {
             if ($_GET['action']=='modcomments'){
                 modcomments();
             }
@@ -23,17 +24,23 @@ try {
             }
             if ($_GET['action']=='allChapters'){
                 allchapters();
-               
+            }    
+            
+            if ($_GET['action']=='writeChapter'){
+                 writechapter($_POST['title'], $_POST['author'], $_POST['content'], $_POST['date_created']);   
             }
             if ($_GET['action']=='deconnection'){
                 deco();
             }
         }
         else 
-    {
-        HomeAdmin();
+            {
+             HomeAdmin();
+            }
     }
-}
-catch(Exception $e){
+
+catch(Exception $e)
+    {
     echo 'Erreur :'. $e->getMessage();
-}?>
+    }
+?>

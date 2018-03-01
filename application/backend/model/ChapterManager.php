@@ -1,7 +1,10 @@
 <?php
 require_once ('../frontend/model/Database.php');
 
-class ChapterManager extends Database{   
+class ChapterManager extends Database
+{   
+
+
 
 
 public function getallChapters()
@@ -11,4 +14,3 @@ public function getallChapters()
         return $allChapters;     
     }
 }
-
