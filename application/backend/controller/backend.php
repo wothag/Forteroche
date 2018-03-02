@@ -24,7 +24,19 @@ function deletecomments($id){
 
     $CommentManager= new CommentManager();
     $CommentManager->deletecomments($id);
-    require('view/backend/CommentView.php');
+    echo '<script>alert("le commentaire a été éffacé");</script>'; 
+    header("location:../backend/index.php?action=modcomments");   
+    
+
+}
+
+function deletechapter($id){
+
+    $ChapterManager= new ChapterManager();
+    $ChapterManager->deletechapter($id);
+    echo '<script>alert("le commentaire a été éffacé");</script>'; 
+    header("location:../backend/index.php?action=allChapters");   
+    
 
 }
 
@@ -32,8 +44,11 @@ function modifycomment($id){
 
     $CommentManager= new CommentManager();
     $CommentManager->modifycomment($id);
+   
+    header("location:../backend/index.php?action=modcomments"); 
+    echo '<script>alert("le commentaire a été modéré");</script>'; 
+    exit; 
     
-
 }
 
 
@@ -44,19 +59,23 @@ function allchapters(){
     $allchapters=$ChapterManager->getAllChapters();
    
     require('view/backend/AllChaptersView.php');
-
-   
-
 }
 
 function writechapter(){
-    /*$WriteManager=new WriteManager;
-    $WriteManager->writeChapter();*/
-    require ('view/backend/ChapterView.php'); 
-    
+    require('view/backend/WriteChapterView.php'); 
+}
 
-
-
+function validchapterform($title,$author,$content)    {
+    $WriteManager = new WriteManager();
+    $affectedLines=$WriteManager->write($title,$author,$content);
+    if ($affectedLines) { 
+    header ('location:index.php?action=allChapters');
+	
+         }
+    else
+    {
+      throw new Exception('Veuillez remplir tous les champs!');
+    }
 }
 
 function deco(){

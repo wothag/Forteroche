@@ -10,30 +10,51 @@
   
 
 try {
-        if (isset($_GET['action'])){
+        if (isset($_GET['action']))
+        {
             if ($_GET['action']=='modcomments'){
                 modcomments();
             }
            
-            if ($_GET['action']=='deleteComment'){
-                deletecomments($_GET['id']);
-            }
-            if ($_GET['action']=='modifyComment'){
-                modifycomment($_GET['id']);
-            }
+                if ($_GET['action']=='deleteComment'){
+                    deletecomments($_GET['id']);
+                }  
+
+                    if ($_GET['action']=='deleteChapter'){
+                            deletechapter($_GET['id']);
+                    }
+
+                        if ($_GET['action']=='modifyComment'){
+                            modifycomment($_GET['id']);
+                        }
+                        
             if ($_GET['action']=='allChapters'){
                 allchapters();
-               
+            }    
+            
+            if ($_GET['action']=='writeChapter'){
+                 writechapter(); 
+                            
             }
+            if ($_GET['action']=='validChapterForm'){
+                validchapterform($_POST['title'],$_POST['author'],$_POST['content']); 
+                          
+           }
+            
             if ($_GET['action']=='deconnection'){
                 deco();
             }
+
         }
         else 
-    {
-        HomeAdmin();
+            {
+             HomeAdmin();
+            }
+        
     }
-}
-catch(Exception $e){
+
+catch(Exception $e)
+    {
     echo 'Erreur :'. $e->getMessage();
-}?>
+    }
+?>
