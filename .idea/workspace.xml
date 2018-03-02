@@ -353,7 +353,7 @@
       <workItem from="1518599810140" duration="23527000" />
       <workItem from="1518644920764" duration="7612000" />
       <workItem from="1519823841494" duration="611000" />
-      <workItem from="1519998170165" duration="338000" />
+      <workItem from="1519998170165" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="ajout de de fonction commentaires">
       <created>1516401802199</created>
@@ -411,11 +411,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519998330185</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ajout de la gestion des chapitres">
+      <created>1519998512799</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519998512799</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171303000" />
+    <option name="totallyTimeSpent" value="171316000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
