@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4444af7a-634e-4ce7-8f50-12d19f24f2ad" name="Default" comment="Passage en MVC du backend">
+    <list default="true" id="4444af7a-634e-4ce7-8f50-12d19f24f2ad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/application/backend/controller/backend.php" afterPath="$PROJECT_DIR$/application/backend/controller/backend.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/index.php" afterPath="$PROJECT_DIR$/application/backend/index.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/model/ChapterManager.php" afterPath="$PROJECT_DIR$/application/backend/model/ChapterManager.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/model/WriteManager.php" afterPath="$PROJECT_DIR$/application/backend/model/WriteManager.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/view/backend/AllChaptersView.php" afterPath="$PROJECT_DIR$/application/backend/view/backend/AllChaptersView.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/view/backend/CommentsView.php" afterPath="$PROJECT_DIR$/application/backend/view/backend/CommentsView.php" />
-      <change beforePath="$PROJECT_DIR$/application/backend/view/backend/backView.php" afterPath="$PROJECT_DIR$/application/backend/view/backend/backView.php" />
-      <change beforePath="$PROJECT_DIR$/application/frontend/view/frontend/CommentViewOk.php" afterPath="$PROJECT_DIR$/application/frontend/view/frontend/CommentViewOk.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -361,7 +353,7 @@
       <workItem from="1518599810140" duration="23527000" />
       <workItem from="1518644920764" duration="7612000" />
       <workItem from="1519823841494" duration="611000" />
-      <workItem from="1519998170165" duration="113000" />
+      <workItem from="1519998170165" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="ajout de de fonction commentaires">
       <created>1516401802199</created>
@@ -412,11 +404,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517862721118</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajout de la gestion des chapitres">
+      <created>1519998330185</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519998330185</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171078000" />
+    <option name="totallyTimeSpent" value="171303000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -495,7 +494,8 @@
     <MESSAGE value="Ajout du module de connection admin + signalement des commentaires indesirables" />
     <MESSAGE value="Creation du module de backend + bootstrap" />
     <MESSAGE value="Passage en MVC du backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passage en MVC du backend" />
+    <MESSAGE value="Ajout de la gestion des chapitres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la gestion des chapitres" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
