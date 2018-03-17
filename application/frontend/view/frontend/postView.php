@@ -1,6 +1,6 @@
 <?php $title = htmlspecialchars($post['title']) ?>
 
-<?php ob_start(); ?>
+
 
 <!doctype html>
 
@@ -8,6 +8,7 @@
     <link href="public/css/StyleHome.css" rel="stylesheet">
 
     <link href="http://fonts.googleapis.com/css?familly=Crete+Round" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <title> Vue du <?=htmlspecialchars($post['title'])?></title>
 </head>
 <header>
@@ -39,7 +40,7 @@
                 <em>le <?= $post['date_created_fr'] ?></em><br/><br/>
         </div>
             <p>
-                <?= nl2br(htmlspecialchars($post['content'])) ?>
+                <?= nl2br($post['content']) ?>
             </p><br/><br/>
 
             <p>
@@ -58,7 +59,7 @@
 		{
 			?>
             <div><strong>Pseudo : <?= htmlspecialchars($comment['author']) ?></strong> <br/>Le <?= $comment['date_comment_fr'] ?></div><br/>
-            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br/><br/>
+            <p><?= nl2br($comment['comment']) ?></p><br/><br/>
             <div>
                 <form action="index.php?action=flag&amp;id=<?= $comment['id'] ?>" method="post">
                 <input type="submit" name="Flag"  value="Signaler le commentaire" class="button2" /><br/><br/><br/>
@@ -84,12 +85,13 @@
                     <label for="comment">Commentaire</label><br />
                     <textarea id="comment" name="comment" rows="10" cols="120"></textarea>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6Lf8cEsUAAAAAE5bBIHVb0LJ_Zjt6tfTwcV3mX_X"></div>
                 <div>
                     <input type="submit" class="button1" />
                 </div>
             </form>
          </div>
+    </div>
+</div>
 </div>
 
-<?php $content = ob_get_clean();?>
-<?php require('template.php');?>

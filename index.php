@@ -41,6 +41,7 @@ try {
 		elseif ($_GET['action'] == 'flag' &&($_GET['id']>0))
 		{
 			flag($_GET['id']);
+
 		}
 	}
 	else {

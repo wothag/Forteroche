@@ -42,7 +42,7 @@
             <em>le <?=$data['date_created_fr']; ?></em><br/><br/>
 
             <p>
-            <?= nl2br(htmlspecialchars($data['content']));?>
+            <?= nl2br($data['content']);?>
                 <br/>
             <em><?= nl2br(htmlspecialchars($data['author']));?></em>
                 <br/> <br/> <br/>

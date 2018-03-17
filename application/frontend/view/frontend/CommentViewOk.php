@@ -1,4 +1,5 @@
-<?php
-echo '<script>alert("le commentaire a été signalé");</script>'; 
-header("location:index.php?action=listPosts");
-exit; 
+
+<script>
+window.alert("Le commentaire est signalé merci");
+</script>
+

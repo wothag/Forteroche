@@ -40,6 +40,10 @@ try {
                 validchapterform($_POST['title'],$_POST['author'],$_POST['content']); 
                           
            }
+
+            if ($_GET['action']=='dashboard'){
+                Dashboard();
+            }
             
             if ($_GET['action']=='deconnection'){
                 deco();

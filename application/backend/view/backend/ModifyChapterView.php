@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php include ('view/includes/header.php');?>
 
                     <!--start of main panel-->
