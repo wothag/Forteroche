@@ -78,6 +78,38 @@ function validchapterform($title,$author,$content)    {
     }
 }
 
+
+function AdminConnect () {
+
+	require('view/backend/Coview.php');
+
+	if(isset($_POST['connect'])) {
+			if(isset($_POST['pseudo'], $_POST['mdp'])) {
+				$pseudo = htmlspecialchars($_POST['pseudo']);
+				$mdp = htmlspecialchars($_POST['mdp']);
+
+					if(!empty($pseudo) AND !empty($mdp)) {
+
+						if(($pseudo == 'forteroche' AND $mdp == '1234') OR ($pseudo == 'admin' AND $mdp == '1234')) {
+							$_SESSION['admin'] = true;
+							header('Location: index.php?action=allChapters');
+						} else
+							{
+								$erreur = 'Les identifiants que vous avez saisi sont invalides';
+							}
+
+				} else {
+					$erreur = 'Veuillez saisir votre nom d\'utilisateur et votre mot de passe';
+				}
+			} else {
+				$erreur = 'Veuillez saisir votre nom d\'utilisateur et votre mot de passe';
+			}
+		}
+
+
+
+}
+
 function deco(){
     
     require ('view/backend/decoView.php'); 
@@ -87,12 +119,16 @@ function deco(){
 
 }
 
-function HomeAdmin(){
-    require ('view/backend/backView.php');
+function HomeAdmin()
+{
+	{
+		if (!isset($_SESSION['admin'])) {
+			AdminConnect();
+		} else {
 
-
-
-
+			header('Location: view/backend/backView.php');
+		}
+	}
 }
 
 ?>
