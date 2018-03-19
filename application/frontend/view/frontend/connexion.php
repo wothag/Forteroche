@@ -31,15 +31,15 @@ if(isset($_POST['connect'])) {
 ?>
 	<!doctype html>
 	<html>
-	<head>
-		<link href="public/css/StyleHome.css" rel="stylesheet">
+        <head>
+        <link href="public/css/StyleHome.css" rel="stylesheet">
 
-		<link href="http://fonts.googleapis.com/css?familly=Crete+Round" rel="stylesheet">
-		<title> Administration du Site</title>
-	</head>
-	<header>
+        <link href="http://fonts.googleapis.com/css?familly=Crete+Round" rel="stylesheet">
+        <title> Administration du Site</title>
+        </head>
+    <header>
 
-		<div class="wrapper">
+        <div class="wrapper">
 			<h1>Jean Forteroche<span class="orange">.</span><br></h1>
 			<!--pan class="text-billet">Billet Simple pour l'Alaska</span>-->
 			<nav>

@@ -13,6 +13,7 @@ function flag($id)
 	$CommentManager= new CommentManager();
 	$CommentManager->updateComment($id);
 	require ('application/frontend/view/frontend/CommentViewOk.php');
+
 }
 
 
@@ -46,14 +47,32 @@ function post()
 function addComment($postId, $author, $comment)
 {
 
-	$commentManager = new CommentManager();
-	$affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $secret = "6Lf8cEsUAAAAAPdDNUSsICa9Cf8a2G-u-NWLFiu3";
+    $response = $_POST['g-recaptcha-response'];
+    $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $response;
 
-	if ($affectedLines === false) {
+    $decode = json_decode(file_get_contents($api_url), true);
+
+            if ($decode['success'] == true) {
+
+            $commentManager = new CommentManager();
+            $affectedLines = $commentManager->postComment($postId, $author, $comment);
+            }
+            else{
+                throw new Exception('Veuillez remplirle cpatcha svp !');
+            }
+
+	if ($affectedLines === false){
 		throw new Exception('Impossible d\'ajouter le commentaire !');
 	} else {
-		header('Location: index.php?action=comments&id=' . $postId);
+		header('Location: index.php?action=post&id=' . $postId);
 	}
+}
+
+
+function dashboard(){
+
+    require ('view/backend/DashboardView.php');
 }
 
 
