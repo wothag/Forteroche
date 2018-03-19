@@ -1,6 +1,9 @@
+<?php
+$token = bin2hex(32);
+$_SESSION['token'] = $token;
 
 
-<?php include ('view/includes/header.php');?>
+ include ('view/includes/header.php');?>
 
                     <!--start of main panel-->
                 <div class="col-sm-10">
@@ -40,7 +43,7 @@
 
 
                         <br><br>
-
+                         <input type ="hidden" name="token" value="<?php echo $token;?>" />
                        </form>
 
                       </div>  

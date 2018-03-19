@@ -45,9 +45,9 @@
                                     '<td>'.$data['comment'],
                                     '<td>'.$data['post_id'],
                                     '<td>'.$data['date_comment_fr'],
-																		'<td>	<a class ="btn btn-danger" href="index.php?action=deleteComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
-																		'<td>	<a class ="btn btn-warning" href="index.php?action=modifyComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modérer</a>',
-																		'</tr>';            
+                                    '<td>	<a class ="btn btn-danger" href="index.php?action=deleteComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Effacer</a>',
+                                    '<td>	<a class ="btn btn-warning" href="index.php?action=modifyComment&id='.$data['id'].'"><span class="glyphicon glyphicon-moins"></span> Modérer</a>',
+                '</tr>';
              }  ?>
         </table>
       </div>  
