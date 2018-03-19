@@ -1,6 +1,6 @@
-<?php session_start(); ?>
+<?php
 
-<?php include ('view/includes/header.php');?>
+include ('view/includes/header.php');?>
 
 
 <!doctype html>
@@ -58,6 +58,7 @@
                         <br>
                         <input class="btn btn-success btn-block btn-lg" type="submit" name="PUBLIER">
                        </fielset>
+                        <input type ="hidden" name="token" value="<?php echo $token;?>" />
                        </form>
                       </div>  
                     <!--end of main panel-->        

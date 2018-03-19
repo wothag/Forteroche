@@ -16,5 +16,22 @@ class WriteManager extends Database
         return $affectedLines;                                   
      
     }
+
+	public function update($id, $title, $author, $content)
+
+	{
+		$db = $this->dbConnect();
+
+		$WriteChapter=$db->prepare('UPDATE chapters SET  title=:title, author=:author, content=:content WHERE id=:id');
+		$affectedLines=$WriteChapter->execute(array(
+			'id' =>$id,
+			'title' =>$title,
+			'author' =>$author,
+			'content' =>$content));
+		return $affectedLines;
+
+	}
+
+
    
 }
