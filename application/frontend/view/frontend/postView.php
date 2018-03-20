@@ -1,4 +1,9 @@
-<?php $title = htmlspecialchars($post['title']) ?>
+<?php
+session_start();
+$token = bin2hex(32);
+$_SESSION['token'] = $token;
+
+$title = htmlspecialchars($post['title']) ?>
 
 
 
@@ -63,6 +68,7 @@
             <div>
                 <form action="index.php?action=flag&amp;id=<?= $comment['id'] ?>" method="post">
                 <input type="submit" name="Flag"  value="Signaler le commentaire" class="button2" /><br/><br/><br/>
+                <input type ="hidden" name="token" value="<?php echo $token;?>" />
                 </form>
             </div>
 
