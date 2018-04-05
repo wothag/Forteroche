@@ -1,62 +1,51 @@
-<?php $title = 'Blog de Mr Forteroche' ?>
+<?php require_once('application/frontend/model/PostManager.php');?>
 
-<?php ob_start(); ?>
+    <head>
+        <link href="public/css/StyleHome.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?familly=Crete+Round" rel="stylesheet">
 
-<!doctype html>
-<html>
-<head>
-    <link href="public/css/StyleHome.css" rel="stylesheet">
+        <title> Liste de chapitres</title>
+    </head>
+    <header>
+		<?php $title = 'Blog de Mr Forteroche' ?>
 
-    <link href="http://fonts.googleapis.com/css?familly=Crete+Round" rel="stylesheet">
-    <title> Liste de chapitres</title>
-</head>
-<header>
+    </header>
 
-    <div class="wrapper">
-        <h1>Jean Forteroche<span class="orange">.</span><br></h1>
-        <!--pan class="text-billet">Billet Simple pour l'Alaska</span>-->
-
-        <nav>
-            <ul>
-                <li><a href="index.php">accueil</a></li>
-                <li><a href="index.php?action=listPosts">liste des chapitres</a></li>
-               
-            </ul>
-
-        </nav>
-    </div>
-
-
-</header>
 
 
 <?php
-        while ($data = $posts->fetch())
-        {
-        ?>
-<div class="wrapper">
-        <div class="Chapter-number">
+while ($data = $page_posts->fetch())
+{
+	?>
+    <div class="container">
+        <div class="col-sm-12">
             <div class="chapter-title">
-                <?= htmlspecialchars($data['title']); ?><br/><br/>
+				<?= htmlspecialchars($data['title']); ?><br/><br/>
             </div>
-            <em>le <?=$data['date_created_fr']; ?></em><br/><br/>
+            <strong>le <?=$data['date_created_fr']; ?></strong><br/><br/>
 
             <p>
-            <?= nl2br($data['content']);?>
+				<?= nl2br($data['content']);?>
                 <br/>
-            <em><?= nl2br(htmlspecialchars($data['author']));?></em>
+                <strong><?= nl2br(htmlspecialchars($data['author']));?></strong>
                 <br/> <br/> <br/>
-             <div class="comments">
+            <div class="btn-custom">
+                <a type="button" class="btn btn-outline-warning" href="index.php?action=post&amp;id=<?=$data['id'] ?>">Accès aux commentaires</button></a>
 
-                        <em><a href="index.php?action=post&amp;id=<?=$data['id'] ?>">Accès aux Commentaires</a></em> <br/>
             </div><hr><br/><br/>
-            </p>
+
         </div>
-</div>
-        <?php
-        }
-        $posts->closeCursor();
-        ?>
+    </div>
+
+	<?php
+}
+
+echo '<a href="index.php?action=listPosts&page=1"> 1 </a>';
+for ($i=2 ; $i<=$nb_pages ; $i++) {
+	echo '<a href="index.php?action=listPosts&page=' . $i . '">' . $i . '</a>';
+	$page_posts->closeCursor();
+}
+?>
 
 <?php $content = ob_get_clean();?>
 

@@ -1,11 +1,7 @@
-<?php
-$token = bin2hex(32);
-$_SESSION['token'] = $token;
-
-
- include ('view/includes/header.php');?>
-
-                    <!--start of main panel-->
+<?php $token = bin2hex(32);
+$_SESSION['token'] = $token;?>
+<!--end of side panel-->
+<!--start of main panel-->
                 <div class="col-sm-10">
                     <h1> Modifier le chapitre</h1> 
 
@@ -49,4 +45,3 @@ $_SESSION['token'] = $token;
                       </div>  
                     <!--end of main panel-->        
                 </div>
-<?php include ('view/includes/footer.php');?>

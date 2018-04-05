@@ -5,7 +5,7 @@
         require_once ('model/ChapterManager.php');
         require_once ('../frontend/model/PostManager.php');
         require_once ('../frontend/model/CommentManager.php');
-    
+        include ('view/inc/header.php');
 
 
   

@@ -11,7 +11,7 @@
 </head>
 
 
-<?php header('Location: index.php');;?>
+
 <script>
     window.alert("Vous êtes déconnecté, à une prochaine visite.");
 </script>

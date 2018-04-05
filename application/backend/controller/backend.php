@@ -170,11 +170,15 @@ function validUpdatechapterform($id, $title, $author, $content)
  * Compare the $_POST from form in coViewphp */
 
 function AdminConnect()
-		{
+{
 
-			require('view/backend/Coview.php');
+	require('view/backend/Coview.php');
+
 
 			if (isset($_POST['connect'])) {
+				/*if (isset($_SESSION['token']) and isset($_POST['token']) and !empty($_SESSION['token']) and !empty($_POST['token'])) {
+					if ($_SESSION['token'] == $_POST['token']) {*/
+
 				if (isset($_POST['pseudo'], $_POST['mdp'])) {
 					$pseudo = htmlspecialchars($_POST['pseudo']);
 					$mdp = htmlspecialchars($_POST['mdp']);
@@ -196,8 +200,11 @@ function AdminConnect()
 				}
 			}
 
+/*		}
+	}*/
+}
 
-		}
+
 
 /**
  *Functioo disconnect and killing session -> admin
@@ -208,7 +215,6 @@ function deco()
 			if (isset($_SESSION['admin']))
 			{
 				unset($_SESSION['admin']);
-				session_destroy(['admin']);
 			}
 		}
 

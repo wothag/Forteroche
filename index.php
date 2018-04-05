@@ -1,6 +1,9 @@
 <?php
-
+session_start();
 require('application/frontend/controller/frontend.php');
+require 'application/frontend/inc/header.php';
+
+
 
 
 try {
@@ -38,7 +41,7 @@ try {
 catch(Exception $e) {
 	echo 'Erreur : ' . $e->getMessage();
 }
-
+require 'application/frontend/inc/footer.php';
 
 
 

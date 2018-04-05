@@ -1,3 +1,10 @@
+<?php   $token = password_hash('1234', PASSWORD_DEFAULT);
+        $mdp = password_hash('1234', PASSWORD_DEFAULT);
+
+?>
+
+
+
 
 <!doctype html>
 <html>
@@ -23,6 +30,7 @@
                                             <input type="password" placeholder="Mot de passe" name="mdp" <?php if(isset($mdp)) { ?> value="<?= $mdp ?>"<?php } ?>>
                                             <br>
                                             <input type="submit" name="connect" value="Se connecter">
+                                            <input type="hidden" name="token" id="token"   value="<?php echo $token; ?>"/>
                                         </form>
                                 </div>
                             </div>
