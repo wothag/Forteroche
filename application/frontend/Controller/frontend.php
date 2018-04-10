@@ -25,10 +25,23 @@ function homePage()
 }
 function listPosts()
 {
-    $postManager = new PostManager();
-    $posts=$postManager->getPosts();
+	$postManager = new PostManager();
+	$posts=$postManager->getPosts();
 
-    require('application/frontend/view/frontend/listPostView.php');
+	$total_chapters=count($posts);
+	$nb_chapters_per_page = 5;
+	$nb_pages = ceil($posts/$nb_chapters_per_page);
+
+
+	$page = 1;
+
+	if (isset($_GET['page'])){
+		$page = $_GET['page'];
+	}
+	$page_posts=$postManager->paginate($page,$nb_chapters_per_page);
+
+
+	require('application/frontend/view/frontend/listPostView.php');
 }
 
 
@@ -47,20 +60,20 @@ function post()
 function addComment($postId, $author, $comment)
 {
 
-    $secret = "6Lf8cEsUAAAAAPdDNUSsICa9Cf8a2G-u-NWLFiu3";
-    $response = $_POST['g-recaptcha-response'];
-    $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $response;
+	$secret = "6Lf8cEsUAAAAAPdDNUSsICa9Cf8a2G-u-NWLFiu3";
+	$response = $_POST['g-recaptcha-response'];
+	$api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $response;
 
-    $decode = json_decode(file_get_contents($api_url), true);
+	$decode = json_decode(file_get_contents($api_url), true);
 
-            if ($decode['success'] == true) {
+	if ($decode['success'] == true) {
 
-            $commentManager = new CommentManager();
-            $affectedLines = $commentManager->postComment($postId, $author, $comment);
-            }
-            else{
-                throw new Exception('Veuillez remplirle cpatcha svp !');
-            }
+		$commentManager = new CommentManager();
+		$affectedLines = $commentManager->postComment($postId, $author, $comment);
+	}
+	else{
+		throw new Exception('Veuillez remplirle cpatcha svp !');
+	}
 
 	if ($affectedLines === false){
 		throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -72,7 +85,6 @@ function addComment($postId, $author, $comment)
 
 function dashboard(){
 
-    require ('view/backend/DashboardView.php');
+	require ('view/backend/DashboardView.php');
 }
-
 
