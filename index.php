@@ -18,7 +18,7 @@ try {
 				post();
 			} else {
 
-				throw new Exception('aucun identifiant de billet envoyé, il s\'agit)  d\'une erreur');
+				Echo ('Commentaire signalé merci');
 			}
 
 		} elseif ($_GET['action'] == 'addComment') {

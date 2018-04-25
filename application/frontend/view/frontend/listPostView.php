@@ -17,8 +17,8 @@
 while ($data = $page_posts->fetch())
 {
 	?>
-    <div class="container">
-        <div class="col-sm-12">
+    <div class="container-fluid">
+        <div class="col-sm-10">
             <div class="chapter-title">
 				<?= htmlspecialchars($data['title']); ?><br/><br/>
             </div>

@@ -3,6 +3,7 @@
 $token = bin2hex(32);
 $_SESSION['token'] = $token;
 ?>
+<?php include_once ('view/includes/header.php');?>
 
                     <!--start of main panel-->
                 <div class="col-sm-10">
@@ -14,17 +15,17 @@ $_SESSION['token'] = $token;
                      <fieldset>
                         
                         <div class="form-group">
-                        <label for="title"<span class="FieldInfo"></span></label>
+<!--                        <label for="title"<span class="FieldInfo">Chapitre:</span></label>-->
                         <input class="form-group" type="text" name="title" id="title" placeholder="Chapitre">
                         </div>
                         
                         <div class="form-group">
-                        <label for="author"<span class="FieldInfo"></span></label>
+<!--                        <label for="author"<span class="FieldInfo">Auteur:</span></label>-->
                         <input class="form-group" type="text" name="author" id="author" placeholder="Auteur">
                         </div>
                         
                         <div class="form-group">
-                        <label for="content">Veuillez composer votre chapitre.</label>
+                        <label for="content">Ecrivez ci dessous votre épisode.</label>
                         <textarea class="form-control" name="content" id="content" rows="10"></textarea>
                         </div>
 
@@ -42,8 +43,6 @@ $_SESSION['token'] = $token;
             </div>
             <!--end of bootstrap row-->   
         </div></br>
-        
+<?php include_once ('view/includes/footer.php');?>
 
             <!--end of bootstrap container-->
-    </body>
-</html>    

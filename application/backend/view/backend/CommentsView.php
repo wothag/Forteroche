@@ -1,18 +1,15 @@
- <div class="col-sm-10">
+<?php include_once ('view/includes/header.php'); ?>
+        <div class="col-sm-10">
         <h1> Administration</h1>
             <!--start of main panel-->
             <h4>Modération des commentaires<h4>
-                <div class="col-lg-12 table-responsive">
-                    <table class="table table-bordered table-striped">
-			            <thead>
-                             <tr>
-                                <th>Auteur</th>
-                                <th>COMMENTAIRES</th>
-                                <th>Chapitre</th>
-                                <th>Date</th><th>Effacer</th>
-                                <th>Modérer</th>
-                        </thead>
-                            </tr>
+            <div class="col-lg-12 table-responsive">
+      <table class="table table-bordered table-striped">
+			<thead>
+        <tr>
+          <th>Auteur</th><th>COMMENTAIRES</th><th>Chapitre</th><th>Date</th><th>Effacer</th><th>Modérer</th>
+			</thead>
+      </tr>
         <?php
            while($data=$flagcomment->fetch())
               {
@@ -34,13 +31,5 @@
     </div>
       <!--end of bootstrap row-->   
     </div>
-    <!--end of bootstrap container-->  
-    <div id="Footer">
-        <hr><p>Theme d'Administration du blog de Mr Forteroche | Par Dhagnere.</p>
-        <hr>
-    </div>
-    <div <style="height:10px; background:#27AAE1;"></style></div>
-
-
-    </body>
-</html>
+    <!--end of bootstrap container-->
+<?php include_once ('view/includes/footer.php');?>

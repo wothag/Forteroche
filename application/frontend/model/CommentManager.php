@@ -8,7 +8,7 @@ class CommentManager extends Database
 	public function getComments($postId)
 	{
 		$db=$this->dbConnect();
-		$comments=$db->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr FROM comments WHERE post_id=? ORDER BY date_comment DESC LIMIT 0,5');
+		$comments=$db->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr FROM comments WHERE post_id=? ORDER BY id DESC LIMIT 0,10');
 		$comments->execute(array($postId));
 		return $comments;
 	}
@@ -31,6 +31,7 @@ class CommentManager extends Database
 
 
 		return $affectedLines;
+		
 
 	}
 

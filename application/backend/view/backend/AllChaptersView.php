@@ -1,15 +1,14 @@
-<?php ob_start(); ?>
-       <!--end of side panel-->
+<?php include_once ('view/includes/header.php'); ?>
 
-         <!--start of main panel-->
+    <!--start of main panel-->
         <div class="col-sm-10">
-        <h1> Vue de tous les résumés des chapitres</h1>
-        <div class="col-lg-12 table-responsive">
-            <table class="table table-bordered table-striped">
-			    <thead>
-                    <tr>
+            <h1> Vue de tous les résumés des chapitres</h1>
+                <div class="col-lg-12 table-responsive">
+                    <table class="table table-bordered table-striped">
+			            <thead>
+                        <tr>
                         <th>chapitre</th><th>Date</th><th>Contenu</th><th>Auteur</th><th>Effacer</th><th>Modifier</th>
-			    </thead>
+			             </thead>
         <?php 
           while ($data = $allchapters->fetch())
           {
@@ -27,11 +26,14 @@
         }
         $allchapters->closeCursor();
         ?>
+                    </table>
+                <!--end of main panel-->
 
-            <!--end of main panel-->
+              <!--end of bootstrap row-->
+ <?php include_once ('view/includes/footer.php');?>
+                </div>
+        </div>
 
-      <!--end of bootstrap row-->
-</html>       
-<?php $content = ob_get_clean();?>
 
-<?php require('template.php');?>
+<?php $content = ob_get_clean();
+require('template.php');?>
