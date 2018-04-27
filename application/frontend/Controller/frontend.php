@@ -3,11 +3,10 @@
 require_once ("application/frontend/model/PostManager.php");
 require_once ("application/frontend/model/CommentManager.php");
 
-
-
-
-
-
+/**
+* le role de la fonction
+*@param $id
+**/
 function flag($id)
 {
 	$CommentManager= new CommentManager();
@@ -20,10 +19,9 @@ function flag($id)
 function homePage()
 {
 	require('application/frontend/view/frontend/homeView.php');
-
-
 }
-function listPosts()
+
+function listPosts($page = null) // ajouter une var $page 
 {
 	$postManager = new PostManager();
 	$posts=$postManager->getPosts();
@@ -32,11 +30,10 @@ function listPosts()
 	$nb_chapters_per_page = 5;
 	$nb_pages = ceil($posts/$nb_chapters_per_page);
 
-
 	$page = 1;
 
 	if (isset($_GET['page'])){
-		$page = $_GET['page'];
+		$page = $_GET['page']; // idéalement, on n'emploie de variables serveurs ($_GET, $_POST) elles doivent être gérer dans le routeur
 	}
 	$page_posts=$postManager->paginate($page,$nb_chapters_per_page);
 
@@ -84,7 +81,6 @@ function addComment($postId, $author, $comment)
 
 
 function dashboard(){
-
 	require ('view/backend/DashboardView.php');
 }
 
